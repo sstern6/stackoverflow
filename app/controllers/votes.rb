@@ -1,4 +1,4 @@
-get '/:type/:id/upvote' do
+post '/:type/:id/upvote' do
   if params[:type] == 'questions'
     current_vote(params[:id], "Question").destroy
     vote = Vote.create(user_id: current_user.id, upvote: true, voteable_id: params[:id], voteable_type: "Question")

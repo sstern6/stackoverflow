@@ -1,5 +1,6 @@
 #show all answers
-get '/answers' do
+get '/questions/:id/answers' do
+	redirect '/questions/:id'
 end
 
 #show new answer form
@@ -8,6 +9,7 @@ end
 
 #create answer
 post '/answers' do
+	@answer = Answer.create(content: params[:content])
 end
 
 #show answer with :id

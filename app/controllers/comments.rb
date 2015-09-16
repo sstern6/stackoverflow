@@ -1,5 +1,7 @@
 #show all comments
 get '/comments' do
+	@all_comments = Comment.all
+	erb :comment
 end
 
 #show new comment form
@@ -8,6 +10,7 @@ end
 
 #create comment
 post '/comments' do
+	@comment = Comment.create(content: params[:content])
 end
 
 #show comment with :id

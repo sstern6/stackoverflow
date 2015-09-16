@@ -1,3 +1,7 @@
+get '/sessions' do
+  session.inspect
+end
+
 get '/' do 
   redirect '/questions'
 end

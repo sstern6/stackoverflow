@@ -1,16 +1,17 @@
-<h1>Hello, <%= @user.username %>.<h1>
+<h3>Hello, <%= @user.username %>.<h3>
 
 <a href='/users/<%= @user.id %>/edit'>Edit Profile</a>
+
 <a href='/users/<%= @user.id %>/delete'>Delete Profile</a>
 
-<h3>Your Questions</h3>
+<h4>Your Questions</h4>
 <% @user.questions.all.each do |question| %>
   <a href='/questions/<%=question.id%>'><%=question.title%></a>
 <%end%>
 
 
 <!-- EDIT THIS ANSWER URL -->
-<h3>Your Answers</h3>
+<h4>Your Answers</h4>
 <% @user.answers.all.each do |answer| %>
-  <a href='/questions/<%=answer.question.id%>/answers/<$=answer.id%>'>Answer to: <%=answer.question.title%></a>
+  Answer to: <a href='/questions/<%=answer.question.id%>/answers/<$=answer.id%>'><%=answer.question.title%></a>
 <%end%>

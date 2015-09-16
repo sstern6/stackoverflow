@@ -17,7 +17,7 @@ end
 
 #show question with :id
 get '/questions/:id' do
-	get_question
+	get_question	
 	@all_answers = @question.answers.all
 	erb :answer
 end

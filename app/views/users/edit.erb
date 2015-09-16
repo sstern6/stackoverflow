@@ -1,0 +1,19 @@
+<h3>Edit Profile</h3>
+
+<% if @error_message %>
+  Your old password was incorrect.
+<% end %>
+
+
+<form method='post' action="/users/<%=@user.id%>">
+  <input type='hidden' name='_method' value='put'>
+  <label for='user[username]'>New username:</label>
+  <input name='user[username]' type='text' value ='<%=@user.username%>'><br>
+  <label for='user[email]'>New email:</label>
+  <input name='user[email]' type='text' value ='<%=@user.email%>'><br>
+  <label for='password_old'>Confirm old password:</label>
+  <input name='password_old' type='password'><br>
+  <label for='user[password]'>New password:</label>
+  <input name='user[password]' type='password'><br>
+  <input type='submit' value='Make Changes'>
+</form>

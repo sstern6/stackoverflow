@@ -1,13 +1,14 @@
-<form id="question" method="put" action="/questions">
-  <input type="text" name="title" placeholder="Title">
+<form id="question" method="post" action="/questions/<%=@question.title%>">
+<input type="hidden" name="_method" value="put">
+  <input type="text" name="title" placeholder="Edit title">
 	<br>
 	<br>
 	<br>
-  <textarea form="question" name="content" placeholder="Your question here"></textarea>
+  <textarea form="question" name="content" placeholder="Edit question"></textarea>
 	<br>
 	<br>
 	<br>
-  <input type="submit" value="Submit new question">
+  <input type="submit" value="Edit question">
 	<br>
 	<br>
 	<br>

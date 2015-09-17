@@ -17,11 +17,12 @@ end
 
 #show question with :id
 get '/questions/:id' do
-	get_question	
+	get_question
 	@all_answers = @question.answers.all
 	session[:question_id] = @question.id
 	erb :answer
 end
+
 
 #show edit form for question with :id
 get '/questions/:id/edit' do
@@ -29,7 +30,7 @@ get '/questions/:id/edit' do
 	if @question.user_id == session[:user_id]
 		erb :question_edit
 	else
-		redirect "/questions/#{@question.id}" 
+		redirect "/questions/#{@question.id}"
 	end
 end
 
@@ -47,9 +48,9 @@ delete '/questions/:id' do
 	get_question
 	if @question.user_id == session[:user_id]
 		@question.destroy
-		redirect "/questions" 
+		redirect "/questions"
 	else
-		redirect "/questions/#{@question.id}" 
+		redirect "/questions/#{@question.id}"
 	end
 	redirect '/questions'
 end

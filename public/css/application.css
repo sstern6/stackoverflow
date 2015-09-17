@@ -176,6 +176,7 @@ div.votebuttons {
   background-size: contain;
 }
 
+<<<<<<< HEAD
 .signup-box {
   display: block;
   margin: auto;
@@ -230,4 +231,7 @@ input[type=text], input[type=password] {
 
 
 
+input[type=text] {
+  width: 50%;
+}
 

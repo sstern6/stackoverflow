@@ -161,3 +161,8 @@ div.votebuttons {
   height: 2em;
   background-size: contain;
 }
+
+input[type=text] {
+  width: 50%;
+}
+

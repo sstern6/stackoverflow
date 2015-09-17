@@ -18,18 +18,24 @@ end
 
 #create comment
 post '/comments' do
-	if session[:user_id]
-		case session[:commentable_type]
-		when "Question"
-			Comment.create(user_id: session[:user_id], content: params[:content], commentable_id: session[:question_id], commentable_type: session[:commentable_type])
-		when "Answer"
-			Comment.create(user_id: session[:user_id], content: params[:content], commentable_id: session[:answer_id], commentable_type: session[:commentable_type])
-		end
+
+	user = User.find(current_user)
+
+	comment = Comment.create(
+			content: params[:content],
+			question_id: params[:question_id],
+			user_id: user.id
+			)
+
+	if request.xhr?
+
+		# {content: params[:content], id: comment.id}.to_json
+
 	end
-	redirect "/questions/" + session[:question_id].to_s
+
 end
 
-#show comment with :id
+# show comment with :id
 get '/comments/:id' do
 	@comment = Comment.find(params[:id])
 	redirect "/questions/#{@comment.question_id}"
@@ -50,5 +56,5 @@ get '/comments/:id/delete' do
 end
 
 #delete comment with :id
-delete '/comments/id' do
+delete '/comments/:id' do
 end

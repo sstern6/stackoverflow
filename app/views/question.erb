@@ -14,21 +14,24 @@
 							<div id="question-mini-list">
 
 								<% @all_questions.each do |question| %>
-                
+
                 <div class="question-summary narrow">
                   <div class="stats">
                   	<div class="votebuttons"><%= erb :_votebutton, locals:{target: question, type: 'questions'}%>
                   	</div>
                     <div class="votes">
+                    	<!-- HARD CODED NEED TO CHANGE -->
                       <span>0</span>
 											<div>votes</div>
 										</div>
 										<div class="answers">
+											<!-- HARD CODED NEED TO CHANGE -->
 											<span>1</span>
 											<div>answers</div>
 										</div>
 										<div class="comments">
 											<span>2</span>
+											<!-- HARD CODED NEED TO CHANGE -->
 											<div>comments</div>
 										</div>
 									</div>

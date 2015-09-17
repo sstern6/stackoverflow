@@ -34,9 +34,6 @@
 									</div>
 									<div class="summary">
 										<h3><a href='/questions/<%=question.id%>'><%= question.title %></a></h3>
-										<div class="asker">
-											asked by <a href"#"><%= question.user.username %></a> on <%= question.created_at.to_s[0..10].gsub(/(\d{4})-(\d{2})-(\d{2})/, '\2-\3-\1') %>
-										</div>
 									</div>
 								</div>
 

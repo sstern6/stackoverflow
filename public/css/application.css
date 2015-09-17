@@ -183,13 +183,14 @@ div.votebuttons {
 
 form {
 
-  margin-top: 25%;
+  margin-top: 5%;
   border-style:solid;
   font-size: 2em;
   margin-left: 25%;
   margin-right: 25%;
   padding-bottom: 5%;
   padding-top: 5%;
+  background-color: #F8F8F8;
 
 }
 
@@ -214,8 +215,17 @@ input[type=text], input[type=password] {
 
 }
 
+.form-title {
+  text-align: center;
+  padding-top: 3em;
+  font-size: 3em;
+}
 
-
+.errors {
+  margin-top: 1em;
+  color: red;
+  font-size: 0.5em;
+}
 
 
 

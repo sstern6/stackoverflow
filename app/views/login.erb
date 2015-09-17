@@ -1,8 +1,6 @@
-<h3>Log In</h3>
 
-<% if @error_message %>
-  Your login information was incorrect.
-<% end %>
+<div class="form-title">Log in Here!</div>
+
 
 <form method='post' action='/login'>
   <div class="form-center">
@@ -11,5 +9,10 @@
   <!-- <label for='password'>Password:</label> -->
   <input name='password' type='password' placeholder='enter password'><br><br>
   <input type='submit' value ='Log In' class="register-button">
+    <div class='errors'>
+        <% if @error_message %>
+          Your login information was incorrect.
+        <% end %>
+    </div>
   </div>
 </form>

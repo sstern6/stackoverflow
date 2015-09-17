@@ -93,21 +93,3 @@ a:visited {
 #h-button-l:hover {
         background-color: #FFB266;
 }
-
-
-/* VOTE BUTTONS */
-
-div.vote {
-  float: left;
-}
-.vote a {
-  text-decoration: none;
-  width: 1em;
-  height: 1em;
-}
-
-.vote div {
-  width: 1.5em;
-  height: 1.5em;
-  background-size: contain;
-}

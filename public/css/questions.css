@@ -1,0 +1,233 @@
+.container {
+	margin: 1 auto;
+	text-align: left;
+	width: 710px;
+}
+
+body {
+	color: #222;
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.3em;
+}
+
+#content {
+	margin: 0 auto;
+	width: 1000px;
+}
+
+#content::after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+
+.summary {
+	float: left;
+	padding: 0;
+	width: 530px;
+}
+
+.summary a {
+	text-decoration: none;
+	color: #07a;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+a:hover {
+	color: #30a7fc;
+}
+
+#tabs {
+	margin: 0 20px 0 0;
+	padding: 11px 0 12px;
+	text-decoration: none;
+	right: 99px;
+	padding: 0.2em 0.5em 0.25em;
+	border: 1px solid transparent;
+	float: right;
+}
+
+#tabs a {
+	text-decoration: none;
+	color: gray;
+	padding: 0.2em 0.5em 0.25em;
+	font-size: 0.9em;
+	display: block;
+	float: left;
+}
+
+#tabs a:hover {
+	  -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #f69c55 #e0e0e0 #fff;
+    border-image: none;
+    border-style: solid;
+    border-width: 2px 1px 1px;
+    font-weight: 400;
+}
+
+.subheader {
+	border-bottom: 1px solid #e0e0e0;
+	height: 34px;
+	clear: both;
+}
+
+.subheader h1 {
+	color: #222;
+	font-weight: 400;
+	float: left;
+	font-size: 18px;
+}
+
+.narrow {
+	float: left;
+	margin-right: 10px;
+	vertical-align: top;
+}
+
+.narrow .summary {
+	float: left;
+	width: 530px;
+	padding: 0;
+	border: 0 none;
+	margin: 0;
+}
+
+.narrow .summary h3 {
+	float: left;
+	line-height: 1.3;
+}
+
+#mainbar {
+	float: left;
+	width: 728px;
+	margin: 0;
+	padding: 0;
+}
+
+.narrow .stats {
+	float: left;
+	margin-right: 10px;
+	vertical-align: top;
+}
+
+.narrow .votes {
+    color: #777;
+    display: inline-block;
+    font-size: 11px;
+    height: 38px;
+    margin: 0 3px 0 0;
+    min-width: 38px;
+    padding: 5px 5px 6px;
+}
+
+.votes {
+	text-align: center;
+}
+
+.narrow .comments {
+    display: inline-block;
+    font-size: 11px;
+    height: auto;
+    margin: 0 3px 0 0;
+    min-width: 44px;
+    padding: 6px;
+}
+
+.comments {
+	text-align: center;
+}
+
+.narrow .answers {
+    color: #777;
+    display: inline-block;
+    font-size: 11px;
+    height: 38px;
+    margin: 0 7px 0 0;
+    min-width: 40px;
+    padding: 5px 5px 6px;
+}
+
+.answers {
+	text-align: center;
+}
+
+.question-summary {
+	float: left;
+	overflow: hidden;
+	width: 728px;
+	border-bottom: 1px solid #e0e0e0;
+	padding: 5px 0 5px;
+}
+
+.summary .asker {
+	color: #999;
+	font-size: 12px;
+	float: right;
+	white-space: nowrap;
+	width: auto;
+	padding-top: 35px;
+}
+
+.summary .asker a {
+	font-size: 12px;
+}
+
+/*for the answers on single question page*/
+.answercell {
+	width: 100%;
+}
+
+.answercell .post-text {
+	float: left;
+}
+
+.answerer {
+	color: #999;
+	font-size: 12px;
+	float: right;
+	white-space: nowrap;
+	width: auto;
+	padding-top: 50px;
+	font-size: 12px;
+}
+
+.votecell {
+	padding-right: 45px;
+	padding-left: 20px;
+	vertical-align: top;
+}
+
+#answers .answer {
+	border-bottom: 1px solid #f0f0f0;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	width: 100%;
+	margin: 0;
+}
+
+
+#answers .subheader {
+	border-bottom: 1px solid #e0e0e0;
+  height: 34px;
+  margin-bottom: 15px;
+  clear: both;
+  margin-top: 40px;
+}
+
+#answers .subheader h2 {
+	float: left;
+	font-size: 18px;
+	margin-bottom: 0;
+	line-height: 1.3;
+}
+
+.vote-up, .vote-count, .vote-down {
+	display: block;
+}
+
+
+

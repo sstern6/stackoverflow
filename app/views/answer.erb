@@ -1,9 +1,39 @@
-<% @all_answers.each do |answer| %>
-	<article>
-	<a href='/answers/<%=answer.id%>'><%= answer.content %></a>
-	<p>
-	<span class='username'><%= answer.user.username %></span>
-    <span class='timestamp'><%= answer.created_at %></span>
-	</p>
-	</article>
-<% end %>
+<div id="answers">
+	<div class="subheader answers">
+		<h2>Answers</h2>
+		<div id="tabs">
+			<a href="#">interesting</a>
+			<a href="#">featured</a>
+			<a href="#">hot</a>
+		</div>
+	</div>
+
+	<% @all_answers.each do |answer| %>
+
+		<div class="answer">
+			<table>
+				<tbody>
+					<tr>
+						<td class="votecell">
+							<div class="vote">
+								<a class="vote-up">up vote</a>
+								<span class="vote-count">0</span>
+								<a class="vote-down">down vote</a>
+							</div>
+						</td>
+						<td class="answercell">
+							<div class="post-text">
+								<!-- <a href='/answers/<%=answer.id%>'> --><p><%= answer.content %></p><!-- </a> -->
+							</div>
+							<div class="answerer">
+								answered by <a href="#"><%= answer.user.username %></a> at <%= answer.created_at.to_s[0..10].gsub(/(\d{4})-(\d{2})-(\d{2})/, '\2-\3-\1') %>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	<% end %>
+
+</div>

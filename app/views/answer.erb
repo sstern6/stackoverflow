@@ -1,9 +1,25 @@
 <% @all_answers.each do |answer| %>
 	<article>
-	<a href='/answers/<%=answer.id%>'><%= answer.content %></a>
+	<%= answer.content %>
 	<p>
 	<span class='username'><%= answer.user.username %></span>
     <span class='timestamp'><%= answer.created_at %></span>
+	<a href="/answers/<%= answer.id %>/edit"><button type='button'>Edit My Answer</button></a>
+	<form id="question" method="post" action="/answers/<%= answer.id %>">
+		<input type="hidden" name="_method" value="delete">
+	    <input type="submit" value="Delete My Answer">
+	</form>
 	</p>
 	</article>
 <% end %>
+
+
+<a href="/answers/new"><button type='button'>Reply with New Answer</button></a>
+
+
+<a href="/questions/<%= @question.id %>/edit"><button type='button'>Edit Question</button></a>
+
+<form id="question" method="post" action="/questions/<%= @question.id %>">
+<input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Question">
+</form>

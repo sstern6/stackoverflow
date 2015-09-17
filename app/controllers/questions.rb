@@ -11,7 +11,7 @@ end
 
 #create question
 post '/questions' do
-	@question = Question.create(user_id: session[:user_id], title: params[:title], content: params[:content])
+	Question.create(user_id: session[:user_id], title: params[:title], content: params[:content])
 	redirect '/questions'
 end
 
@@ -19,6 +19,7 @@ end
 get '/questions/:id' do
 	get_question	
 	@all_answers = @question.answers.all
+	session[:question_id] = @question.id
 	erb :answer
 end
 
@@ -34,15 +35,21 @@ end
 
 #update subject with :id
 put '/questions/:id' do
-end
-
-#show delete form for question with :id
-get '/questions/:id/delete' do
 	get_question
-	@question.destroy
+	@question.title = params[:title] if params[:title]
+	@question.content = params[:content] if params[:content]
+	@question.save
+	redirect '/questions'
 end
 
 #delete question with :id
-delete '/questions/id' do
+delete '/questions/:id' do
+	get_question
+	if @question.user_id == session[:user_id]
+		@question.destroy
+		redirect "/questions" 
+	else
+		redirect "/questions/#{@question.id}" 
+	end
+	redirect '/questions'
 end
-

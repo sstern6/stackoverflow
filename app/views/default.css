@@ -1,26 +1,3 @@
-/*html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-#navbar li{
-  float: right;
-  list-style-type: none;
-}
-
-#navbar a {
-  display: block;
-  width: 100px;
-  text-align: center;
-}*/
-
 body {
         margin-left: 10%;
         margin-right: 10%;
@@ -92,22 +69,4 @@ a:visited {
 }
 #h-button-l:hover {
         background-color: #FFB266;
-}
-
-
-/* VOTE BUTTONS */
-
-div.vote {
-  float: left;
-}
-.vote a {
-  text-decoration: none;
-  width: 1em;
-  height: 1em;
-}
-
-.vote div {
-  width: 1.5em;
-  height: 1.5em;
-  background-size: contain;
 }

@@ -43,6 +43,7 @@ Vote.create!(:user_id => 2, :upvote => true, :voteable_id => 2, :voteable_type =
 Vote.create!(:user_id => 2, :upvote => false, :voteable_id => 3, :voteable_type => "Answer")
 Vote.create!(:user_id => 3, :upvote => true, :voteable_id => 1, :voteable_type => "Answer")
 Vote.create!(:user_id => 3, :upvote => true, :voteable_id => 3, :voteable_type => "Answer")
+
 Vote.create!(:user_id => 11, :upvote => true, :voteable_id => 1, :voteable_type => "Question")
 Vote.create!(:user_id => 13, :upvote => true, :voteable_id => 1, :voteable_type => "Question")
 Vote.create!(:user_id => 15, :upvote => true, :voteable_id => 1, :voteable_type => "Question")

@@ -1,5 +1,6 @@
 <% @all_answers.each do |answer| %>
 	<article>
+  <div class="vote"><%= erb :_votebutton, locals:{target: answer, type: 'answers'}%></div>
 	<a href='/answers/<%=answer.id%>'><%= answer.content %></a>
 	<p>
 	<span class='username'><%= answer.user.username %></span>

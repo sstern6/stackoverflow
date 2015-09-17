@@ -1,14 +1,26 @@
+<h2><%= @question.title %></h2>
+<p><%= @question.content %></p>
+	<% @question.comments.each do |comment| %>
+<p><%= comment.content %></p>
+<% end %>
+<a href="/comments/questions/new"><button type='button'>New Comment</button></a>
+
 <% @all_answers.each do |answer| %>
 	<article>
 	<%= answer.content %>
 	<p>
 	<span class='username'><%= answer.user.username %></span>
     <span class='timestamp'><%= answer.created_at %></span>
+    <%= answer.comments %>
 	<a href="/answers/<%= answer.id %>/edit"><button type='button'>Edit My Answer</button></a>
 	<form id="question" method="post" action="/answers/<%= answer.id %>">
 		<input type="hidden" name="_method" value="delete">
 	    <input type="submit" value="Delete My Answer">
 	</form>
+	<% answer.comments.each do |comment| %>
+		<p><%= comment.content %></p>
+	<% end %>
+	<a href="/comments/answers/<%= answer.id %>/new"><button type='button'>New Comment</button></a>
 	</p>
 	</article>
 <% end %>

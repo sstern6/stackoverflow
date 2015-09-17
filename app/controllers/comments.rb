@@ -5,12 +5,28 @@ get '/comments' do
 end
 
 #show new comment form
-get '/comments/new' do
+get '/comments/questions/new' do
+	session[:commentable_type] = "Question"
+ 	erb :comment_form
+end
+
+get '/comments/answers/:id/new' do
+	session[:answer_id] = params[:id]
+	session[:commentable_type] = "Answer"
+ 	erb :comment_form
 end
 
 #create comment
 post '/comments' do
-	@comment = Comment.create(content: params[:content])
+	if session[:user_id]
+		case session[:commentable_type]
+		when "Question"
+			Comment.create(user_id: session[:user_id], content: params[:content], commentable_id: session[:question_id], commentable_type: session[:commentable_type])
+		when "Answer"
+			Comment.create(user_id: session[:user_id], content: params[:content], commentable_id: session[:answer_id], commentable_type: session[:commentable_type])
+		end
+	end
+	redirect "/questions/" + session[:question_id].to_s
 end
 
 #show comment with :id

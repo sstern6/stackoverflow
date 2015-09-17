@@ -144,7 +144,20 @@ div.votebuttons {
 }
 
 .votebuttons div {
-  width: 1.5em;
-  height: 1.5em;
+  padding-top: 5px;
+  width: 1.8em;
+  height: 0.5em;
+  background-size: contain;
+}
+
+.answer .votecell .votebuttons a{
+  text-decoration: none;
+  width: 2em;
+  height: 4em;
+}
+
+.answer .votecell .votebuttons {
+  width: 1.8em;
+  height: 2em;
   background-size: contain;
 }

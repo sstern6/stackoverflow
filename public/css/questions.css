@@ -103,8 +103,8 @@ a:hover {
 
 #mainbar {
 	float: left;
-	width: 728px;
-	margin: 0;
+	width: 1000px;
+	margin-top: 20px;
 	padding: 0;
 }
 
@@ -158,7 +158,7 @@ a:hover {
 .question-summary {
 	float: left;
 	overflow: hidden;
-	width: 728px;
+	width: 1000px;
 	border-bottom: 1px solid #e0e0e0;
 	padding: 5px 0 5px;
 }
@@ -190,7 +190,8 @@ a:hover {
 	font-size: 12px;
 	float: right;
 	white-space: nowrap;
-	width: auto;
+	width: 250px;
+	height: 100%;
 	padding-top: 50px;
 	font-size: 12px;
 }
@@ -229,5 +230,135 @@ a:hover {
 	display: block;
 }
 
+.edit-answer {
+	position: relative;
+	right: 0;
+	top: 0;
+	display: inline-block;
+}
+
+/*This is question CSS*/
+
+#question-comments {
+	float: right;
+	border-top: 1px solid #f0f0f0;
+	width: 810px;
+	margin-bottom: 30px;
+}
+
+#question-comments p {
+	padding: 0 20px;
+	font-size: 12px;
+	right: 0;
+}
+
+#question-comments .individual-comment {
+	position: relative;
+	font-size: 12px;
+	right: 0;
+	border-bottom: 1px solid #f0f0f0;
+	width: 800px;
+}
+
+#question-comments button {
+	float: right;
+}
+
+#answer-comments {
+	float: right;
+	width: 810px;
+	margin-bottom: 30px;
+}
 
 
+#answer-comments .individual-comment {
+	position: relative;
+	font-size: 12px;
+	right: 0;
+	border-bottom: 1px solid #f0f0f0;
+	width: 800px;
+}
+
+#answer-comments p {
+	padding: 0 20px;
+	font-size: 12px;
+	right: 0;
+}
+
+#answer-comments button {
+	float: right;
+}
+
+/*This CSS is for the buttons
+*/
+#question-comments button {
+        float: right;
+        display: inline;
+        margin: 20px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 120px;
+        height: 20px;
+        top: 20px;
+        right: 18%;
+}
+
+#question-comments button:hover {
+		background-color: #FFB266;
+}
+
+#answer-comments button {
+	      float: right;
+        display: inline;
+        margin: 20px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 120px;
+        height: 20px;
+        top: 20px;
+        right: 18%;
+}
+
+#answer-comments button:hover {
+	background-color: #FFB266;
+}
+
+.edit-answer button {
+		    float: right;
+        display: inline-block;
+        margin: 10px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 120px;
+        height: 20px;
+        top: 20px;
+        right: 18%;
+}
+
+.edit-answer button:hover {
+	background-color: #FFB266;
+}
+
+.edit-answer form input {
+		    float: right;
+        display: inline-block;
+        margin: 10px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 120px;
+        height: 20px;
+        top: 20px;
+        right: 18%;
+}
+
+.edit-answer form input:hover {
+	background-color: #FFB266;
+}

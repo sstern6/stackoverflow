@@ -1,3 +1,17 @@
+<div id="questions">
+	<h2><%= @question.title %></h2>
+
+		<div id="question-comments">
+			<% @question.comments.each do |comment| %>
+			<div class="individual-comment">
+			<p><%= comment.content %></p>
+			</div>
+			<% end %>
+			<a href="/comments/questions/new"><button type='button'>New Comment</button></a>
+		</div>
+	</div>
+</div>
+
 
 <div id="answers">
 	<div class="subheader answers">
@@ -17,50 +31,56 @@
 					<tr>
 						<td class="votecell">
 							<div class="vote">
-								<a class="vote-up">up vote</a>
-								<span class="vote-count">0</span>
-								<a class="vote-down">down vote</a>
-							</div>
+								<div class="votebuttons"><%= erb :_votebutton, locals:{target: answer, type: 'answers'}%>
+								</div>
+						</div>
 						</td>
 						<td class="answercell">
 							<div class="post-text">
 								<!-- <a href='/answers/<%=answer.id%>'> --><p><%= answer.content %></p><!-- </a> -->
 							</div>
+
+
 							<div class="answerer">
-								answered by <a href="#"><%= answer.user.username %></a> at <%= answer.created_at.to_s[0..10].gsub(/(\d{4})-(\d{2})-(\d{2})/, '\2-\3-\1') %>
+								<div class="edit-answer">
+									<a href="/answers/<%= answer.id %>/edit"><button type='button'>Edit My Answer</button></a>
+									<form id="question" method="post" action="/answers/<%= answer.id %>">
+	    						  <input type="hidden" name="_method" value="delete">
+	      						<input type="submit" value="Delete My Answer">
+	   						 </form>
+								</div>
+
+								<div class="answer-info">
+									asked by <a href="#"><%= answer.user.username %></a> at <%= answer.created_at.to_s[0..10].gsub(/(\d{4})-(\d{2})-(\d{2})/, '\2-\3-\1') %>
+								</div>
+						
 							</div>
+
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 
+		<div id="answer-comments">
+
+			<% answer.comments %>
+				
+				<% answer.comments.each do |comment| %>
+					<div class="individual-comment">
+						<p><%= comment.content %></p>
+					</div>
+				<% end %>
+
+				<a href="/comments/answers/<%= answer.id %>/new"><button type='button'>New Comment</button></a>
+				</p>
+
+		</div>
+
 	<% end %>
 
 </div>
 
-
-ROUTES AND ISH
-
-<% @all_answers.each do |answer| %>
-  <article>
-
-  <div class="votebuttons"><%= erb :_votebutton, locals:{target: answer, type: 'answers'}%></div>
-  <div class="list-content">
-    <a href='/answers/<%=answer.id%>'><%= answer.content %></a>
-
-    <p>
-    <span class='username'><%= answer.user.username %></span>
-      <span class='timestamp'><%= answer.created_at %></span>
-    <a href="/answers/<%= answer.id %>/edit"><button type='button'>Edit My Answer</button></a>
-    <form id="question" method="post" action="/answers/<%= answer.id %>">
-      <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Delete My Answer">
-    </form>
-    </p>
-  </div>
-  </article>
-<% end %>
 
 
 <a href="/answers/new"><button type='button'>Reply with New Answer</button></a>

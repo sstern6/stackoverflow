@@ -11,7 +11,7 @@ end
 
 #create question
 post '/questions' do
-	@question = Question.create(user_id: session[:user_id], title: params[:title], content: params[:content])
+	Question.create(user_id: session[:user_id], title: params[:title], content: params[:content])
 	redirect '/questions'
 end
 
@@ -19,6 +19,7 @@ end
 get '/questions/:id' do
 	get_question	
 	@all_answers = @question.answers.all
+	session[:question_id] = @question.id
 	erb :answer
 end
 

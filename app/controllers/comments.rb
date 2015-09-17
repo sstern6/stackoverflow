@@ -31,6 +31,8 @@ end
 
 #show comment with :id
 get '/comments/:id' do
+	@comment = Comment.find(params[:id])
+	redirect "/questions/#{@comment.question_id}"
 end
 
 #show edit form for comment with :id

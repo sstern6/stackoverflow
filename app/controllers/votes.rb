@@ -1,28 +1,36 @@
-post '/:type/:id/upvote' do
+get '/:type/:id/upvote' do
+
   if params[:type] == 'questions'
-    current_vote(params[:id], "Question").destroy
-    vote = Vote.create(user_id: current_user.id, upvote: true, voteable_id: params[:id], voteable_type: "Question")
+    type = "Question"
   elsif params[:type] == 'answers'
-    current_vote(params[:id], "Answer").destroy
-    vote = Vote.create(user_id: current_user.id, upvote: true, voteable_id: params[:id], voteable_type: "Answer")
+    type = "Answer"
   else
-    current_vote(params[:id], "Comment").destroy
-    vote = Vote.create(user_id: current_user.id, upvote: true, voteable_id: params[:id], voteable_type: "Comment")
+    type = "Comment"
   end
-  redirect "/#{params[:type]}/#{params[:id]}"
+  
+  if current_vote(params[:id], type)
+    current_vote(params[:id], type).destroy
+  end
+
+  vote = Vote.create(user_id: current_user.id, upvote: true, voteable_id: params[:id], voteable_type: type)
+  redirect "/questions/#{session[:question_id]}"
 end
 
-post '/:type/:id/downvote' do
+get '/:type/:id/downvote' do
   if params[:type] == 'questions'
-    current_vote(params[:id], "Question").destroy
-    vote = Vote.create(user_id: current_user.id, upvote: false, voteable_id: params[:id], voteable_type: "Question")
+    type = "Question"
   elsif params[:type] == 'answers'
-    current_vote(params[:id], "Answer").destroy
-    vote = Vote.create(user_id: current_user.id, upvote: false, voteable_id: params[:id], voteable_type: "Answer")
+    type = "Answer"
   else
-    current_vote(params[:id], "Comment").destroy
-    vote = Vote.create(user_id: current_user.id, upvote: false, voteable_id: params[:id], voteable_type: "Comment")
+    type = "Comment"
   end
+  
+  if current_vote(params[:id], type)
+    current_vote(params[:id], type).destroy
+  end
+
+  Vote.create(user_id: current_user.id, upvote: false, voteable_id: params[:id], voteable_type: type)
+
   redirect "/#{params[:type]}/#{params[:id]}"
 end
 

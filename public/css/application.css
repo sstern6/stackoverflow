@@ -1,4 +1,4 @@
-/*html {
+html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -10,7 +10,7 @@
   box-sizing: inherit;
 }
 
-#navbar li{
+/*#navbar li{
   float: right;
   list-style-type: none;
 }
@@ -22,13 +22,36 @@
 }*/
 
 body {
-        margin-left: 10%;
+      margin-left: 10%;
         margin-right: 10%;
         font-family: "Trebuchet MS", Helvetica, sans-serif;
         color: black;
 }
 
-div#footer {
+.layout-menu {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.layout-menu::after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.topbar {
+  background: rgba(0, 0, 0, 0.86) none repeat scroll 0 0;
+  height: 34px;
+  line-height: 1;
+  width: 100%;
+/*  position: relative;
+  width: 1000px;
+  margin: 0 auto 0;*/
+  background-color: black;
+}
+
+footer {
         position: absolute;
         width: 100%;
         bottom: 0px;
@@ -37,25 +60,38 @@ div#footer {
         font-size: 10px;
         text-align: center;
         color: #A0A0A0;
-        background-color: #404040;
+        background: #404040 none repeat scroll 0 0;
 }
 
-div#title {
+#title {
+        float: left;
         font-size: 15px;
         text-align: left;
         left: 20%;
 }
-div#subtitle {
+
+#title a {
+  text-decoration: none;
+  color: black;
+}
+
+#subtitle {
         /*position: absolute;*/
         left: 20%;
         font-size: 15px;
         text-align: left;
         color: black;
-
 }
 
-div#h-button-l {
-        position: absolute;
+#subtitle a {
+  text-decoration: none;
+  color: black;
+}
+
+#h-button-l {
+        float: right;
+        display: inline;
+        margin: 20px;
         border: 1px #404040;
         text-align: center;
         color: white;
@@ -65,8 +101,11 @@ div#h-button-l {
         top: 20px;
         right: 18%;
 }
-div#h-button-r {
-        position: absolute;
+
+#h-button-r {
+        float: right;
+        display: inline;
+        margin: 20px;
         border: 1px #404040;
         text-align: center;
         color: white;
@@ -92,4 +131,20 @@ a:visited {
 }
 #h-button-l:hover {
         background-color: #FFB266;
+}
+
+/* VOTE BUTTONS */
+div.votebuttons {
+  float: left;
+}
+.votebuttons a {
+  text-decoration: none;
+  width: 1em;
+  height: 1em;
+}
+
+.votebuttons div {
+  width: 1.5em;
+  height: 1.5em;
+  background-size: contain;
 }

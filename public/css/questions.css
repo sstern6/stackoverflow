@@ -288,3 +288,77 @@ a:hover {
 #answer-comments button {
 	float: right;
 }
+
+/*This CSS is for the buttons
+*/
+#question-comments button {
+        float: right;
+        display: inline;
+        margin: 20px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 120px;
+        height: 20px;
+        top: 20px;
+        right: 18%;
+}
+
+#question-comments button:hover {
+		background-color: #FFB266;
+}
+
+#answer-comments button {
+	      float: right;
+        display: inline;
+        margin: 20px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 120px;
+        height: 20px;
+        top: 20px;
+        right: 18%;
+}
+
+#answer-comments button:hover {
+	background-color: #FFB266;
+}
+
+.edit-answer button {
+		    float: right;
+        display: inline-block;
+        margin: 10px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 120px;
+        height: 20px;
+        top: 20px;
+        right: 18%;
+}
+
+.edit-answer button:hover {
+	background-color: #FFB266;
+}
+
+.edit-answer form input {
+		    float: right;
+        display: inline-block;
+        margin: 10px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 120px;
+        height: 20px;
+        top: 20px;
+        right: 18%;
+}
+
+.edit-answer form input:hover {
+	background-color: #FFB266;
+}

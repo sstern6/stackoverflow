@@ -7,3 +7,10 @@
 	</p>
 	</article>
 <% end %>
+
+<a href="/questions/<%= @question.id %>/edit"><button type='button'>Edit Question</button></a>
+
+<form id="question" method="post" action="/questions/<%= @question.id %>">
+<input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Question">
+</form>

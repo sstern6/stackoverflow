@@ -1,11 +1,159 @@
+
+
+		<div class="container">
+			<div id="header">
+				<div id="content">
+					<div id="mainbar">
+						<div class="subheader">
+							<h1 id="h-top-questions"></h1>
+							<div id="tabs">
+								<a href="#">interesting</a>
+								<a href="#">featured</a>
+								<a href="#">hot</a>
+							</div>
+							<div id="question-mini-list">
+
+								<% @all_questions.each do |question| %>
+                <div class="votebuttons"><%= erb :_votebutton, locals:{target: question, type: 'questions'}%></div>
+                <div class="question-summary narrow">
+                  <div class="stats">
+                    <div class="votes">
+                      <span>0</span>
+											<div>votes</div>
+										</div>
+										<div class="answers">
+											<span>1</span>
+											<div>answers</div>
+										</div>
+										<div class="comments">
+											<span>2</span>
+											<div>comments</div>
+										</div>
+									</div>
+									<div class="summary">
+										<h3><a href='/questions/<%=question.id%>'><%= question.title %></a></h3>
+										<div class="asker">
+											asked by <a href"#"><%= question.user.username %></a> on <%= question.created_at.to_s[0..10].gsub(/(\d{4})-(\d{2})-(\d{2})/, '\2-\3-\1') %>
+										</div>
+									</div>
+								</div>
+
+								<% end %>
+
+								<div class="question-summary narrow">
+									<div class="stats">
+										<div class="votes">
+											<span>0</span>
+											<div>votes</div>
+										</div>
+										<div class="comments">
+											<span>1</span>
+											<div>comments</div>
+										</div>
+										<div class="answers">
+											<span>2</span>
+											<div>answers</div>
+										</div>
+									</div>
+									<div class="summary">
+										<h3><a href="#">Second question: Python?</a></h3>
+										<div class="asker">
+											asked by <a href"#">user</a>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="question-summary narrow">
+									<div class="stats">
+										<div class="votes">
+											<span>0</span>
+											<div>votes</div>
+										</div>
+										<div class="comments">
+											<span>1</span>
+											<div>comments</div>
+										</div>
+										<div class="answers">
+											<span>2</span>
+											<div>answers</div>
+										</div>
+									</div>
+									<div class="summary">
+										<h3><a href="#">Third question: Android dev?</a></h3>
+										<div class="asker">
+											asked by <a href"#">user</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="question-summary narrow">
+									<div class="stats">
+										<div class="votes">
+											<span>0</span>
+											<div>votes</div>
+										</div>
+										<div class="comments">
+											<span>1</span>
+											<div>comments</div>
+										</div>
+										<div class="answers">
+											<span>2</span>
+											<div>answers</div>
+										</div>
+									</div>
+									<div class="summary">
+										<h3><a href="#">Fourth Question: Perl run function?</a></h3>
+										<div class="asker">
+											asked by <a href"#">user</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="question-summary narrow">
+									<div class="stats">
+										<div class="votes">
+											<span>0</span>
+											<div>votes</div>
+										</div>
+										<div class="comments">
+											<span>1</span>
+											<div>comments</div>
+										</div>
+										<div class="answers">
+											<span>2</span>
+											<div>answers</div>
+										</div>
+									</div>
+									<div class="summary">
+										<h3><a href="#">Fifth question: runSequence in Gulp?</a></h3>
+										<div class="asker">
+											asked by <a href"#">user</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- <a href="/questions/new"><button type='button'>New Question</button></a> -->
+XANDER ROUTES
+
+
 <% @all_questions.each do |question| %>
-	<article>
-	<a href='/questions/<%=question.id%>'><%= question.title %></a>
-	<p>
-	<span class='username'><%= question.user.username %></span>
+
+  <article>
+
+  
+  <a href='/questions/<%=question.id%>'><%= question.title %></a>
+  <p>
+  <span class='username'><%= question.user.username %></span>
     <span class='timestamp'><%= question.created_at %></span>
-	</p>
-	</article>
+  </p>
+  </article>
 <% end %>
 
 <a href="/questions/new"><button type='button'>New Question</button></a>

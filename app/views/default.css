@@ -1,0 +1,72 @@
+body {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+        color: black;
+}
+
+footer {
+        clear: both;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        border: 1px solid black;
+        font-size: 10px;
+        text-align: center;
+        color: #A0A0A0;
+        background-color: #404040;
+}
+
+div#title {
+        font-size: 15px;
+        text-align: left;
+        left: 20%;
+}
+div#subtitle {
+        /*position: absolute;*/
+        left: 20%;
+        font-size: 15px;
+        text-align: left;
+        color: black;
+
+}
+
+div#h-button-l {
+        position: absolute;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 90px;
+        height: 30px;
+        top: 20px;
+        right: 18%;
+}
+div#h-button-r {
+        position: absolute;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 90px;
+        height: 30px;
+        top: 20px;
+        right: 10%;
+}
+
+.button-text {
+        font-size: 14px;
+        margin: 7px;
+}
+a:link {
+
+}
+a:visited {
+
+}
+#h-button-r:hover {
+        background-color: #FFB266;
+}
+#h-button-l:hover {
+        background-color: #FFB266;
+}

@@ -6,36 +6,58 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
-  <link rel="stylesheet" href="/css/normalize.css">
+ <!--  <link rel="stylesheet" href="/css/normalize.css">
 
-  <!--
+  
     skeleton.css for basic responsive grid
-  -->
-  <link rel="stylesheet" href="/css/skeleton.css">
+  
+  <link rel="stylesheet" href="/css/skeleton.css"> -->
 
   <!--
     application.css is where you put your styles
   -->
-  <link rel="stylesheet" href="/css/application.css">
+
+  <!--
+    Awesome font for icons
+  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/application.css" type="text/css">
+  <link rel="stylesheet" href="/css/questions.css" type="text/css">
+
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
 </head>
-<body>
-  <header>
-    <h1>stackoverflow 2.0</h1>
-    <ul id='navbar'>
-      <%if is_authenticated?%>
-        <li><a href='/users/<%=current_user.id%>'>My Profile</a></li>
-        <li><a href='/logout'>Log Out</a></li>
-      <%else%>
-        <li><a href='/users/new'>Sign Up</a></li>
-        <li><a href='/login'>Log In</a></li>
-      <%end%>
-    </ul>
-  </header>
-  <%= yield %>
-</body>
+    <div class="topbar">
+    </div>
+  <body>
+    <div class="layout-menu">
+      <div id="title">
+        <a href='/'><h1>stackoverflow</h1></a>
+      </div>
+          <%if is_authenticated?%>
+            <a href='/logout'><div id="h-button-r">
+              <p class="button-text">log out</p>
+            </div></a>
+            <a href='/questions/new'><div id="h-button-l">
+              <p class="button-text">Ask</p>
+            </div></a>
+          <%else%>
+            <a href='/login'><div id="h-button-r">
+              <p class="button-text">log in</p>
+            </div></a>
+            <a href='/users/new'><div id="h-button-l">
+              <p class="button-text">sign up</p>
+            </div></a>
+          <%end%>
+    </div>
+
+        <%= yield %>
+  </body>
+
+  <footer>
+    <p>site design / logo © 2015 Stack Exchange Inc; user contributions licensed under cc by-sa 3.0 with attribution required</p><p>rev 2015.9.15.2824</p>
+  </footer>
 </html>

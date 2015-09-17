@@ -10,7 +10,7 @@ html {
   box-sizing: inherit;
 }
 
-#navbar li{
+/*#navbar li{
   float: right;
   list-style-type: none;
 }
@@ -19,4 +19,132 @@ html {
   display: block;
   width: 100px;
   text-align: center;
+}*/
+
+body {
+      margin-left: 10%;
+        margin-right: 10%;
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+        color: black;
+}
+
+.layout-menu {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.layout-menu::after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.topbar {
+  background: rgba(0, 0, 0, 0.86) none repeat scroll 0 0;
+  height: 34px;
+  line-height: 1;
+  width: 100%;
+/*  position: relative;
+  width: 1000px;
+  margin: 0 auto 0;*/
+  background-color: black;
+}
+
+footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        left: 0px;
+        border: 1px solid black;
+        font-size: 10px;
+        text-align: center;
+        color: #A0A0A0;
+        background: #404040 none repeat scroll 0 0;
+}
+
+#title {
+        float: left;
+        font-size: 15px;
+        text-align: left;
+        left: 20%;
+}
+
+#title a {
+  text-decoration: none;
+  color: black;
+}
+
+#subtitle {
+        /*position: absolute;*/
+        left: 20%;
+        font-size: 15px;
+        text-align: left;
+        color: black;
+}
+
+#subtitle a {
+  text-decoration: none;
+  color: black;
+}
+
+#h-button-l {
+        float: right;
+        display: inline;
+        margin: 20px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 90px;
+        height: 30px;
+        top: 20px;
+        right: 18%;
+}
+
+#h-button-r {
+        float: right;
+        display: inline;
+        margin: 20px;
+        border: 1px #404040;
+        text-align: center;
+        color: white;
+        background-color: #A0A0A0;
+        width: 90px;
+        height: 30px;
+        top: 20px;
+        right: 10%;
+}
+
+.button-text {
+        font-size: 14px;
+        margin: 7px;
+}
+a:link {
+
+}
+a:visited {
+
+}
+#h-button-r:hover {
+        background-color: #FFB266;
+}
+#h-button-l:hover {
+        background-color: #FFB266;
+}
+
+/* VOTE BUTTONS */
+div.votebuttons {
+  float: left;
+}
+.votebuttons a {
+  text-decoration: none;
+  width: 1em;
+  height: 1em;
+}
+
+.votebuttons div {
+  width: 1.5em;
+  height: 1.5em;
+  background-size: contain;
 }

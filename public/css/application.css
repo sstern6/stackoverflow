@@ -182,10 +182,38 @@ div.votebuttons {
 }
 
 form {
-  margin-top: 5%;
-  text-align: center;
+
+  margin-top: 25%;
+  border-style:solid;
+  font-size: 2em;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-bottom: 5%;
+  padding-top: 5%;
 
 }
+
+input[type=text], input[type=password] {
+  height: 3em;
+  font-size: 0.7em;
+
+}
+.form-center {
+  text-align: center
+}
+
+.register-button {
+  display: inline;
+  border: 1px #404040;
+  text-align: center;
+  color: white;
+  background-color: #A0A0A0;
+  width: 120px;
+  height: 50px;
+  font-size: 20px;
+
+}
+
 
 
 

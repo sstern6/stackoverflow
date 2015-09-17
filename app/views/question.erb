@@ -1,0 +1,11 @@
+<% @all_questions.each do |question| %>
+	<article>
+	<a href='/questions/<%=question.id%>'><%= question.title %></a>
+	<p>
+	<span class='username'><%= question.user.username %></span>
+    <span class='timestamp'><%= question.created_at %></span>
+	</p>
+	</article>
+<% end %>
+
+<a href="/questions/new"><button type='button'>New Question</button></a>

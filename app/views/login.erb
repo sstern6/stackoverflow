@@ -1,0 +1,13 @@
+<h3>Log In</h3>
+
+<% if @error_message %>
+  Your login information was incorrect. 
+<% end %>
+
+<form method='post' action='/login'>
+  <label for='email'>Email:</label>
+  <input name='email' type='text'>
+  <label for='password'>Password:</label>
+  <input name='password' type='password'>
+  <input type='submit' value ='Log In'>
+</form>

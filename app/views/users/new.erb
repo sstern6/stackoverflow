@@ -1,0 +1,17 @@
+<h3>Register</h3>
+
+<div class='errors'>
+  <%if @errors%>
+    <%= @errors[0]%>
+  <%end%>
+</div>
+
+<form method="post" action="/users">
+  <label for='user[username]'>Choose a username:</label>
+  <input type='text' name='user[username]'>
+  <label for='user[email]'>Email:</label>
+  <input type='text' name='user[email]'>
+  <label for='user[password]'>Choose a password:</label>
+  <input type='password' name='user[password]'>
+  <input type='submit' value='Register'>
+</form>

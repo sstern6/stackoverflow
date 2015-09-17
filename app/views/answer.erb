@@ -1,0 +1,9 @@
+<% @all_answers.each do |answer| %>
+	<article>
+	<a href='/answers/<%=answer.id%>'><%= answer.content %></a>
+	<p>
+	<span class='username'><%= answer.user.username %></span>
+    <span class='timestamp'><%= answer.created_at %></span>
+	</p>
+	</article>
+<% end %>

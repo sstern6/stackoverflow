@@ -1,0 +1,18 @@
+<h3>Hello, <%= @user.username %>.<h3>
+
+<% if session[:user_id] == @user.id %>
+  <a href='/users/<%= @user.id %>/edit'>Edit Profile</a>
+  <a href='/users/<%= @user.id %>/delete'>Delete Profile</a>
+<% end %>
+
+<h4>Your Questions</h4>
+<% @user.questions.all.each do |question| %>
+  <a href='/questions/<%=question.id%>'><%=question.title%></a>
+<%end%>
+
+
+<!-- EDIT THIS ANSWER URL -->
+<h4>Your Answers</h4>
+<% @user.answers.all.each do |answer| %>
+  Answer to: <a href='/questions/<%=answer.question.id%>/answers/<$=answer.id%>'><%=answer.question.title%></a>
+<%end%>
